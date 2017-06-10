@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="45" id="KGk-i7-Jjw" customClass="ItemOptionCell" customModule="StickyNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfo-Q6-6Gq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxM-xs-jWw">
+                                <rect key="frame" x="20" y="12.5" width="47" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGF-Cu-EBM">
+                                <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="4JR-Ky-FTJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wxM-xs-jWw" firstAttribute="leading" secondItem="Tfo-Q6-6Gq" secondAttribute="leading" constant="20" id="9TT-kD-PGb"/>
+                            <constraint firstAttribute="trailing" secondItem="WGF-Cu-EBM" secondAttribute="trailing" id="CEt-P6-MFJ"/>
+                            <constraint firstItem="wxM-xs-jWw" firstAttribute="centerY" secondItem="Tfo-Q6-6Gq" secondAttribute="centerY" id="HLF-w7-k6w"/>
+                            <constraint firstAttribute="bottom" secondItem="WGF-Cu-EBM" secondAttribute="bottom" id="K2x-YI-orQ"/>
+                            <constraint firstItem="WGF-Cu-EBM" firstAttribute="leading" secondItem="Tfo-Q6-6Gq" secondAttribute="leading" id="TBD-tG-vBA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Tfo-Q6-6Gq" secondAttribute="bottom" id="67A-3D-356"/>
+                    <constraint firstItem="Tfo-Q6-6Gq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Fji-A3-f0f"/>
+                    <constraint firstItem="Tfo-Q6-6Gq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="a4K-i8-y6o"/>
+                    <constraint firstAttribute="trailing" secondItem="Tfo-Q6-6Gq" secondAttribute="trailing" id="qf7-3W-OKi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="optionNameLabel" destination="wxM-xs-jWw" id="STP-p8-Ate"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="52.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		075BC3C7DF649A1C89494F9E /* Pods_StickyNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */; };
+		5A250CD81EEBB22A00B2914F /* TextEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */; };
+		5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */; };
+		5A4A43C51ED87F7F001BAA32 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */; };
+		5A4A43C71ED8889B001BAA32 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A43C61ED8889B001BAA32 /* Color.swift */; };
+		5A514BDE1EDABB9B008D60F6 /* CategoryColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A514BDD1EDABB9B008D60F6 /* CategoryColorView.xib */; };
+		5A514BE21EDABCB2008D60F6 /* CategoryColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A514BE11EDABCB2008D60F6 /* CategoryColorView.swift */; };
+		5A514BE61EDB3196008D60F6 /* ColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A514BE51EDB3196008D60F6 /* ColorView.xib */; };
+		5A9E1B4C1ED81E4F007D41C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1B4B1ED81E4F007D41C7 /* AppDelegate.swift */; };
+		5A9E1B511ED81E4F007D41C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1B4F1ED81E4F007D41C7 /* Main.storyboard */; };
+		5A9E1B531ED81E4F007D41C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1B521ED81E4F007D41C7 /* Assets.xcassets */; };
+		5A9E1B561ED81E4F007D41C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1B541ED81E4F007D41C7 /* LaunchScreen.storyboard */; };
+		5A9E1B611ED8207F007D41C7 /* DetailNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1B601ED8207F007D41C7 /* DetailNoteViewController.swift */; };
+		5A9E1B641ED821CC007D41C7 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1B631ED821CC007D41C7 /* ViewExtension.swift */; };
+		5A9E1B661ED82417007D41C7 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1B651ED82417007D41C7 /* NotesViewController.swift */; };
+		5A9E1B681ED83D91007D41C7 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1B671ED83D91007D41C7 /* CustomTextView.swift */; };
+		5AA531731EDC0CA0001EED85 /* OptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA531721EDC0CA0001EED85 /* OptionView.xib */; };
+		5AA531761EDC0F32001EED85 /* ItemOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA531741EDC0F32001EED85 /* ItemOptionCell.swift */; };
+		5AA531771EDC0F32001EED85 /* ItemOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA531751EDC0F32001EED85 /* ItemOptionCell.xib */; };
+		5AA531791EDC1104001EED85 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA531781EDC1104001EED85 /* OptionView.swift */; };
+		5AB63F391ED9247A001213E2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB63F381ED9247A001213E2 /* Category.swift */; };
+		5AB63F3B1ED92866001213E2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB63F3A1ED92866001213E2 /* Note.swift */; };
+		5AB63F3E1ED9754D001213E2 /* NoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB63F3C1ED9754D001213E2 /* NoteListCell.swift */; };
+		5AB63F3F1ED9754D001213E2 /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB63F3D1ED9754D001213E2 /* NoteListCell.xib */; };
+		5AB63F411ED97B86001213E2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB63F401ED97B86001213E2 /* Enums.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickyNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote.debug.xcconfig"; sourceTree = "<group>"; };
+		5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditorCell.swift; sourceTree = "<group>"; };
+		5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		5A4A43C61ED8889B001BAA32 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5A514BDD1EDABB9B008D60F6 /* CategoryColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryColorView.xib; sourceTree = "<group>"; };
+		5A514BE11EDABCB2008D60F6 /* CategoryColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryColorView.swift; sourceTree = "<group>"; };
+		5A514BE51EDB3196008D60F6 /* ColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorView.xib; sourceTree = "<group>"; };
+		5A9E1B481ED81E4F007D41C7 /* StickyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A9E1B4B1ED81E4F007D41C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A9E1B501ED81E4F007D41C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A9E1B521ED81E4F007D41C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A9E1B551ED81E4F007D41C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A9E1B571ED81E4F007D41C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A9E1B601ED8207F007D41C7 /* DetailNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNoteViewController.swift; sourceTree = "<group>"; };
+		5A9E1B631ED821CC007D41C7 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		5A9E1B651ED82417007D41C7 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		5A9E1B671ED83D91007D41C7 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		5AA531721EDC0CA0001EED85 /* OptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionView.xib; sourceTree = "<group>"; };
+		5AA531741EDC0F32001EED85 /* ItemOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemOptionCell.swift; sourceTree = "<group>"; };
+		5AA531751EDC0F32001EED85 /* ItemOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemOptionCell.xib; sourceTree = "<group>"; };
+		5AA531781EDC1104001EED85 /* OptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		5AB63F381ED9247A001213E2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = StickyNote/Category.swift; sourceTree = SOURCE_ROOT; };
+		5AB63F3A1ED92866001213E2 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = StickyNote/Note.swift; sourceTree = SOURCE_ROOT; };
+		5AB63F3C1ED9754D001213E2 /* NoteListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListCell.swift; sourceTree = "<group>"; };
+		5AB63F3D1ED9754D001213E2 /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
+		5AB63F401ED97B86001213E2 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = StickyNote/Views/Enums.swift; sourceTree = SOURCE_ROOT; };
+		A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A9E1B451ED81E4F007D41C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075BC3C7DF649A1C89494F9E /* Pods_StickyNote.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14D458E647A2BBA70B52CF1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22D9639E4FFAD4143924ABB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */,
+				A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5A9E1B3F1ED81E4F007D41C7 = {
+			isa = PBXGroup;
+			children = (
+				14D458E647A2BBA70B52CF1F /* Frameworks */,
+				22D9639E4FFAD4143924ABB0 /* Pods */,
+				5A9E1B491ED81E4F007D41C7 /* Products */,
+				5A9E1B4A1ED81E4F007D41C7 /* StickyNote */,
+			);
+			sourceTree = "<group>";
+		};
+		5A9E1B491ED81E4F007D41C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1B481ED81E4F007D41C7 /* StickyNote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A9E1B4A1ED81E4F007D41C7 /* StickyNote */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1B621ED821B2007D41C7 /* Extensions */,
+				5A9E1B5F1ED81FF4007D41C7 /* Models */,
+				5A9E1B5D1ED81FD8007D41C7 /* ViewControllers */,
+				5A9E1B5E1ED81FEB007D41C7 /* Views */,
+				5A9E1B4B1ED81E4F007D41C7 /* AppDelegate.swift */,
+				5A9E1B521ED81E4F007D41C7 /* Assets.xcassets */,
+				5A9E1B571ED81E4F007D41C7 /* Info.plist */,
+				5A9E1B541ED81E4F007D41C7 /* LaunchScreen.storyboard */,
+				5A9E1B4F1ED81E4F007D41C7 /* Main.storyboard */,
+			);
+			path = StickyNote;
+			sourceTree = "<group>";
+		};
+		5A9E1B5D1ED81FD8007D41C7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1B601ED8207F007D41C7 /* DetailNoteViewController.swift */,
+				5A9E1B651ED82417007D41C7 /* NotesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5A9E1B5E1ED81FEB007D41C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1B671ED83D91007D41C7 /* CustomTextView.swift */,
+				5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */,
+				5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */,
+				5AB63F3C1ED9754D001213E2 /* NoteListCell.swift */,
+				5AB63F3D1ED9754D001213E2 /* NoteListCell.xib */,
+				5A514BDD1EDABB9B008D60F6 /* CategoryColorView.xib */,
+				5A514BE11EDABCB2008D60F6 /* CategoryColorView.swift */,
+				5A514BE51EDB3196008D60F6 /* ColorView.xib */,
+				5AA531721EDC0CA0001EED85 /* OptionView.xib */,
+				5AA531741EDC0F32001EED85 /* ItemOptionCell.swift */,
+				5AA531751EDC0F32001EED85 /* ItemOptionCell.xib */,
+				5AA531781EDC1104001EED85 /* OptionView.swift */,
+				5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A9E1B5F1ED81FF4007D41C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AB63F381ED9247A001213E2 /* Category.swift */,
+				5AB63F3A1ED92866001213E2 /* Note.swift */,
+				5AB63F401ED97B86001213E2 /* Enums.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A9E1B621ED821B2007D41C7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A43C61ED8889B001BAA32 /* Color.swift */,
+				5A9E1B631ED821CC007D41C7 /* ViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A9E1B471ED81E4F007D41C7 /* StickyNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A9E1B5A1ED81E50007D41C7 /* Build configuration list for PBXNativeTarget "StickyNote" */;
+			buildPhases = (
+				7C8D19E7660B3A5E7D028528 /* [CP] Check Pods Manifest.lock */,
+				5A9E1B441ED81E4F007D41C7 /* Sources */,
+				5A9E1B451ED81E4F007D41C7 /* Frameworks */,
+				5A9E1B461ED81E4F007D41C7 /* Resources */,
+				39FD95E6AEAB49BB8E111222 /* [CP] Embed Pods Frameworks */,
+				D2B35645097D5B018343D510 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickyNote;
+			productName = StickyNote;
+			productReference = 5A9E1B481ED81E4F007D41C7 /* StickyNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A9E1B401ED81E4F007D41C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Quoc Huy Ngo";
+				TargetAttributes = {
+					5A9E1B471ED81E4F007D41C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 589Z4L567V;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5A9E1B431ED81E4F007D41C7 /* Build configuration list for PBXProject "StickyNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A9E1B3F1ED81E4F007D41C7;
+			productRefGroup = 5A9E1B491ED81E4F007D41C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A9E1B471ED81E4F007D41C7 /* StickyNote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A9E1B461ED81E4F007D41C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A514BE61EDB3196008D60F6 /* ColorView.xib in Resources */,
+				5A9E1B561ED81E4F007D41C7 /* LaunchScreen.storyboard in Resources */,
+				5A9E1B531ED81E4F007D41C7 /* Assets.xcassets in Resources */,
+				5AA531731EDC0CA0001EED85 /* OptionView.xib in Resources */,
+				5A9E1B511ED81E4F007D41C7 /* Main.storyboard in Resources */,
+				5AB63F3F1ED9754D001213E2 /* NoteListCell.xib in Resources */,
+				5A514BDE1EDABB9B008D60F6 /* CategoryColorView.xib in Resources */,
+				5A4A43C51ED87F7F001BAA32 /* NoteCell.xib in Resources */,
+				5AA531771EDC0F32001EED85 /* ItemOptionCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39FD95E6AEAB49BB8E111222 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C8D19E7660B3A5E7D028528 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2B35645097D5B018343D510 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A9E1B441ED81E4F007D41C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A9E1B661ED82417007D41C7 /* NotesViewController.swift in Sources */,
+				5AB63F3E1ED9754D001213E2 /* NoteListCell.swift in Sources */,
+				5A9E1B681ED83D91007D41C7 /* CustomTextView.swift in Sources */,
+				5A9E1B4C1ED81E4F007D41C7 /* AppDelegate.swift in Sources */,
+				5A4A43C71ED8889B001BAA32 /* Color.swift in Sources */,
+				5AA531761EDC0F32001EED85 /* ItemOptionCell.swift in Sources */,
+				5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */,
+				5AA531791EDC1104001EED85 /* OptionView.swift in Sources */,
+				5AB63F3B1ED92866001213E2 /* Note.swift in Sources */,
+				5A9E1B641ED821CC007D41C7 /* ViewExtension.swift in Sources */,
+				5A9E1B611ED8207F007D41C7 /* DetailNoteViewController.swift in Sources */,
+				5A250CD81EEBB22A00B2914F /* TextEditorCell.swift in Sources */,
+				5AB63F391ED9247A001213E2 /* Category.swift in Sources */,
+				5A514BE21EDABCB2008D60F6 /* CategoryColorView.swift in Sources */,
+				5AB63F411ED97B86001213E2 /* Enums.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A9E1B4F1ED81E4F007D41C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A9E1B501ED81E4F007D41C7 /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		5A9E1B541ED81E4F007D41C7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A9E1B551ED81E4F007D41C7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A9E1B581ED81E4F007D41C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A9E1B591ED81E4F007D41C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A9E1B5B1ED81E50007D41C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 589Z4L567V;
+				INFOPLIST_FILE = StickyNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.StickyNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5A9E1B5C1ED81E50007D41C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 589Z4L567V;
+				INFOPLIST_FILE = StickyNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.StickyNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A9E1B431ED81E4F007D41C7 /* Build configuration list for PBXProject "StickyNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A9E1B581ED81E4F007D41C7 /* Debug */,
+				5A9E1B591ED81E4F007D41C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A9E1B5A1ED81E50007D41C7 /* Build configuration list for PBXNativeTarget "StickyNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A9E1B5B1ED81E50007D41C7 /* Debug */,
+				5A9E1B5C1ED81E50007D41C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A9E1B401ED81E4F007D41C7 /* Project object */;
+}
