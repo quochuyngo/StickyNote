@@ -18,7 +18,8 @@ class DetailNoteViewController: UIViewController {
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var categoryColorButton: UIButton!
-    @IBOutlet weak var optionButton: UIBarButtonItem!
+    @IBOutlet weak var optionButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var editTextView: UITextView!
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var timeCreatedLabel: UILabel!
@@ -32,10 +33,10 @@ class DetailNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-        editTextView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
         NotificationCenter.default.addObserver(self, selector: #selector(DetailNoteViewController.keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DetailNoteViewController.keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        editTextView.contentSize.height = size.height + 100
+        setEditorStates(isEditing: false)
+        //editTextView.contentSize.height = size.height + 40
     }
     override func viewWillDisappear(_ animated: Bool) {
     }
@@ -130,6 +131,21 @@ class DetailNoteViewController: UIViewController {
         }
     }
     
+    func setEditorStates(isEditing: Bool) {
+        if isEditing {
+            UIView.animate(withDuration: 3, delay: 0.5, options: .curveEaseInOut, animations:  {
+                self.doneButton.isHidden = false
+                self.categoryColorButton.isHidden = true
+                self.optionButton.isHidden = true
+            }, completion: nil)
+        } else {
+             UIView.animate(withDuration: 5, delay: 0.6, options: .curveEaseInOut, animations:  {
+                self.doneButton.isHidden = true
+                self.categoryColorButton.isHidden = false
+                self.optionButton.isHidden = false
+             }, completion: nil)
+        }
+    }
     func configRx() {
         editTextView.rx.text.orEmpty.asObservable().subscribe(onNext: { text in
             if !text.isEmpty {
@@ -141,20 +157,22 @@ class DetailNoteViewController: UIViewController {
     func keyBoardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             bottomConstraint.constant = keyboardSize.height
-            editTextView.contentSize.height = size.height + 100
+            setEditorStates(isEditing: true)
+            //editTextView.contentSize.height = size.height + 100
         }
     }
     
     func keyBoardWillHide(notification: NSNotification) {
         bottomConstraint.constant = 0
-        editTextView.contentSize.height = size.height + 100
+        setEditorStates(isEditing: false)
+        //editTextView.contentSize.height = size.height + 100
     }
     
     @IBAction func onOptionTap(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Options", message: "", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Lock", style: .default, handler: {
             UIAlertAction in
-            print("Lock")
+            self.performSegue(withIdentifier: "PasscodeVC", sender: self)
         }))
         actionSheet.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
             UIAlertAction in
@@ -163,7 +181,7 @@ class DetailNoteViewController: UIViewController {
             alert.addAction(UIKit.UIAlertAction(title: "Delete", style: .default) { _ in
                 alert.dismiss(animated: true, completion: nil)
                 self.delegate?.deleteNote(note: self.note!)
-                 _ = self.navigationController?.popViewController(animated: true)
+                _ = self.navigationController?.popViewController(animated: true)
             })
             alert.addAction(UIKit.UIAlertAction(title: "Cancel", style: .default) { _ in
                 alert.dismiss(animated: true, completion: nil)
@@ -177,6 +195,9 @@ class DetailNoteViewController: UIViewController {
     
     func getFirstLine(text: String) -> String{
         return text.components(separatedBy: "\n")[0]
+    }
+    @IBAction func onDoneTap(_ sender: Any) {
+        view.endEditing(true)
     }
     
     @IBAction func onPickColor(_ sender: Any) {
@@ -197,19 +218,27 @@ class DetailNoteViewController: UIViewController {
 extension DetailNoteViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        titleTextField.text = getFirstLine(text: textView.text)
-        editTextView.contentSize = CGSize(width: size.width, height: size.height + 80)
-        try! realm.write {
-            note?.content = textView.text
-            note?.title = titleTextField.text!
+        if note.titleEdited {
+            try! realm.write {
+                 note?.content = textView.text
+            }
+        } else {
+            titleTextField.text = getFirstLine(text: textView.text)
+            try! realm.write {
+                note?.content = textView.text
+                note?.title = titleTextField.text!
+            }
         }
     }
 }
 
 extension DetailNoteViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        try! realm.write {
-            note?.title = textField.text!
+        if !(textField.text?.isEmpty)! {
+            try! realm.write {
+                note.titleEdited = true
+                note?.title = textField.text!
+            }
         }
     }
 }
