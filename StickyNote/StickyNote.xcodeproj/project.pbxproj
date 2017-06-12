@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		075BC3C7DF649A1C89494F9E /* Pods_StickyNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */; };
+		5A0D8F8F1EECEC12002BB55B /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D8F8E1EECEC12002BB55B /* PasscodeViewController.swift */; };
 		5A250CD81EEBB22A00B2914F /* TextEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */; };
 		5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */; };
 		5A4A43C51ED87F7F001BAA32 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickyNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote.debug.xcconfig"; sourceTree = "<group>"; };
+		5A0D8F8E1EECEC12002BB55B /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditorCell.swift; sourceTree = "<group>"; };
 		5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				5A9E1B601ED8207F007D41C7 /* DetailNoteViewController.swift */,
 				5A9E1B651ED82417007D41C7 /* NotesViewController.swift */,
+				5A0D8F8E1EECEC12002BB55B /* PasscodeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				5AA531761EDC0F32001EED85 /* ItemOptionCell.swift in Sources */,
 				5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */,
 				5AA531791EDC1104001EED85 /* OptionView.swift in Sources */,
+				5A0D8F8F1EECEC12002BB55B /* PasscodeViewController.swift in Sources */,
 				5AB63F3B1ED92866001213E2 /* Note.swift in Sources */,
 				5A9E1B641ED821CC007D41C7 /* ViewExtension.swift in Sources */,
 				5A9E1B611ED8207F007D41C7 /* DetailNoteViewController.swift in Sources */,

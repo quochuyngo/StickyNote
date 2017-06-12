@@ -15,6 +15,7 @@ class Note: Object {
     dynamic var content: String = ""
     dynamic var createdTime: Date = Date()
     dynamic var isLocked: Bool = false
+    dynamic var titleEdited:Bool = false
     dynamic var category: Category? = Category()
     
     func formatFullDateTime() -> String {
