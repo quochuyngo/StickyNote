@@ -9,7 +9,7 @@
 enum DisplayType {
     case list
     case grid
-    case details
+    //case details
 }
 
 enum NoteOptions: String {

@@ -38,8 +38,6 @@ class DetailNoteViewController: UIViewController {
         setEditorStates(isEditing: false)
         //editTextView.contentSize.height = size.height + 40
     }
-    override func viewWillDisappear(_ animated: Bool) {
-    }
     func setViews() {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 18
@@ -120,7 +118,7 @@ class DetailNoteViewController: UIViewController {
         case .white:
             editTextView.backgroundColor = UIColor.white
             timeView.backgroundColor = UIColor.white
-            navigationController?.navigationBar.barTintColor = UIColor.gray
+            navigationController?.navigationBar.barTintColor = Color.white
             categoryColorButton.backgroundColor = UIColor.white
             break
         case .yellow:

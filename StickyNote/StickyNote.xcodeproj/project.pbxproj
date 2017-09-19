@@ -33,6 +33,10 @@
 		5AB63F3E1ED9754D001213E2 /* NoteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB63F3C1ED9754D001213E2 /* NoteListCell.swift */; };
 		5AB63F3F1ED9754D001213E2 /* NoteListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB63F3D1ED9754D001213E2 /* NoteListCell.xib */; };
 		5AB63F411ED97B86001213E2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB63F401ED97B86001213E2 /* Enums.swift */; };
+		5AD3296C1EEE53AD00137A2C /* NoteGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD3296A1EEE53AD00137A2C /* NoteGridCell.swift */; };
+		5AD3296D1EEE53AD00137A2C /* NoteGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD3296B1EEE53AD00137A2C /* NoteGridCell.xib */; };
+		5AD5FBDF1EEEFE8500BA9C14 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5FBDE1EEEFE8500BA9C14 /* GridLayout.swift */; };
+		5AD5FBE11EEF088C00BA9C14 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5FBE01EEF088C00BA9C14 /* ListLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		5AB63F3C1ED9754D001213E2 /* NoteListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListCell.swift; sourceTree = "<group>"; };
 		5AB63F3D1ED9754D001213E2 /* NoteListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListCell.xib; sourceTree = "<group>"; };
 		5AB63F401ED97B86001213E2 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = StickyNote/Views/Enums.swift; sourceTree = SOURCE_ROOT; };
+		5AD3296A1EEE53AD00137A2C /* NoteGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteGridCell.swift; sourceTree = "<group>"; };
+		5AD3296B1EEE53AD00137A2C /* NoteGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteGridCell.xib; sourceTree = "<group>"; };
+		5AD5FBDE1EEEFE8500BA9C14 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		5AD5FBE01EEF088C00BA9C14 /* ListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
 		A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +165,10 @@
 				5AA531751EDC0F32001EED85 /* ItemOptionCell.xib */,
 				5AA531781EDC1104001EED85 /* OptionView.swift */,
 				5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */,
+				5AD3296A1EEE53AD00137A2C /* NoteGridCell.swift */,
+				5AD3296B1EEE53AD00137A2C /* NoteGridCell.xib */,
+				5AD5FBDE1EEEFE8500BA9C14 /* GridLayout.swift */,
+				5AD5FBE01EEF088C00BA9C14 /* ListLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,7 +227,7 @@
 				TargetAttributes = {
 					5A9E1B471ED81E4F007D41C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 589Z4L567V;
+						DevelopmentTeam = ZNAQHPTR3U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -250,6 +262,7 @@
 				5A9E1B511ED81E4F007D41C7 /* Main.storyboard in Resources */,
 				5AB63F3F1ED9754D001213E2 /* NoteListCell.xib in Resources */,
 				5A514BDE1EDABB9B008D60F6 /* CategoryColorView.xib in Resources */,
+				5AD3296D1EEE53AD00137A2C /* NoteGridCell.xib in Resources */,
 				5A4A43C51ED87F7F001BAA32 /* NoteCell.xib in Resources */,
 				5AA531771EDC0F32001EED85 /* ItemOptionCell.xib in Resources */,
 			);
@@ -311,10 +324,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A9E1B661ED82417007D41C7 /* NotesViewController.swift in Sources */,
+				5AD3296C1EEE53AD00137A2C /* NoteGridCell.swift in Sources */,
 				5AB63F3E1ED9754D001213E2 /* NoteListCell.swift in Sources */,
 				5A9E1B681ED83D91007D41C7 /* CustomTextView.swift in Sources */,
 				5A9E1B4C1ED81E4F007D41C7 /* AppDelegate.swift in Sources */,
 				5A4A43C71ED8889B001BAA32 /* Color.swift in Sources */,
+				5AD5FBE11EEF088C00BA9C14 /* ListLayout.swift in Sources */,
 				5AA531761EDC0F32001EED85 /* ItemOptionCell.swift in Sources */,
 				5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */,
 				5AA531791EDC1104001EED85 /* OptionView.swift in Sources */,
@@ -324,6 +339,7 @@
 				5A9E1B611ED8207F007D41C7 /* DetailNoteViewController.swift in Sources */,
 				5A250CD81EEBB22A00B2914F /* TextEditorCell.swift in Sources */,
 				5AB63F391ED9247A001213E2 /* Category.swift in Sources */,
+				5AD5FBDF1EEEFE8500BA9C14 /* GridLayout.swift in Sources */,
 				5A514BE21EDABCB2008D60F6 /* CategoryColorView.swift in Sources */,
 				5AB63F411ED97B86001213E2 /* Enums.swift in Sources */,
 			);
@@ -449,11 +465,11 @@
 			baseConfigurationReference = 54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 589Z4L567V;
+				DEVELOPMENT_TEAM = ZNAQHPTR3U;
 				INFOPLIST_FILE = StickyNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.StickyNote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.NoteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -464,11 +480,11 @@
 			baseConfigurationReference = A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 589Z4L567V;
+				DEVELOPMENT_TEAM = ZNAQHPTR3U;
 				INFOPLIST_FILE = StickyNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.StickyNote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.NoteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
