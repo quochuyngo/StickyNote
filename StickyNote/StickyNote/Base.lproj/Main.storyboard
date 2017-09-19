@@ -20,10 +20,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCW-zl-SGP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-S1-RZf">
+                                <rect key="frame" x="135" y="323.5" width="105.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="avv-LN-wwo">
+                                <rect key="frame" x="3" y="67" width="369" height="597"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C5d-qL-6Sa">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAY-sJ-4ba">
                                 <rect key="frame" x="317" y="609" width="38" height="38"/>
                                 <color key="backgroundColor" red="0.11546194400147652" green="0.62745098040000002" blue="0.76038171140939592" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,26 +54,40 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BCW-zl-SGP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Unp-Lg-6T6"/>
-                            <constraint firstAttribute="trailing" secondItem="BCW-zl-SGP" secondAttribute="trailing" id="bMo-1A-5nW"/>
+                            <constraint firstItem="avv-LN-wwo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="3" id="9Oi-3A-Hok"/>
+                            <constraint firstItem="fZR-S1-RZf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EGm-zt-HHD"/>
+                            <constraint firstAttribute="trailing" secondItem="avv-LN-wwo" secondAttribute="trailing" constant="3" id="ILc-k8-FSn"/>
+                            <constraint firstItem="avv-LN-wwo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="3" id="XN3-6G-4Ju"/>
                             <constraint firstAttribute="trailing" secondItem="xAY-sJ-4ba" secondAttribute="trailing" constant="20" id="cWT-xe-D9F"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BCW-zl-SGP" secondAttribute="bottom" id="gv6-4p-mnJ"/>
-                            <constraint firstItem="BCW-zl-SGP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iGM-M9-1rM"/>
+                            <constraint firstItem="fZR-S1-RZf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fRs-wp-bkO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="avv-LN-wwo" secondAttribute="bottom" constant="3" id="pup-iX-9Dp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xAY-sJ-4ba" secondAttribute="bottom" constant="20" id="wNE-R9-4TS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sticky Note" id="dX7-rQ-qOz"/>
+                    <navigationItem key="navigationItem" title="Sticky Note" id="dX7-rQ-qOz">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="O2d-bB-Lof">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yyE-Ck-7u2">
+                                <rect key="frame" x="323" y="4" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_grid"/>
+                                <connections>
+                                    <action selector="onSelectTypeDisplay:" destination="BYZ-38-t0r" eventType="touchDown" id="nJz-f3-1tg"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addNoteButton" destination="xAY-sJ-4ba" id="XV7-4h-fdH"/>
-                        <outlet property="tableView" destination="BCW-zl-SGP" id="y2e-C4-BIK"/>
+                        <outlet property="collectionView" destination="avv-LN-wwo" id="88N-S4-V6p"/>
+                        <outlet property="displayTypeButton" destination="yyE-Ck-7u2" id="D3K-F0-irD"/>
                         <segue destination="fOI-Rq-bam" kind="push" identifier="toDetailNoteVCSegue" id="ijb-8K-5nL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848.79999999999995" y="-559.07046476761627"/>
+            <point key="canvasLocation" x="893.60000000000002" y="-559.07046476761627"/>
         </scene>
         <!--Detail Note View Controller-->
         <scene sceneID="5hY-e5-lr7">
@@ -74,7 +101,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qZj-mJ-oqX">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="qZj-mJ-oqX">
                                 <rect key="frame" x="0.0" y="92" width="375" height="575"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,6 +174,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="CRj-l4-MTd"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-12" maxY="0.0"/>
                                         <state key="normal" image="ic_more"/>
                                         <connections>
                                             <action selector="onOptionTap:" destination="fOI-Rq-bam" eventType="touchDown" id="czD-ua-2Oj"/>
@@ -302,6 +330,7 @@
     </scenes>
     <resources>
         <image name="ic_back1" width="21" height="21"/>
+        <image name="ic_grid" width="20" height="20"/>
         <image name="ic_minus" width="25" height="25"/>
         <image name="ic_more" width="21" height="21"/>
     </resources>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteCell: UITableViewCell {
+class NoteCell: UICollectionViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var boderView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,11 +26,6 @@ class NoteCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
  
     func setColor(color:CategoryColor) {
@@ -61,7 +56,7 @@ class NoteCell: UITableViewCell {
             break
         case .white:
             cellView.backgroundColor = UIColor.white
-            boderView.backgroundColor = UIColor.white
+            boderView.backgroundColor = Color.white
             break
         case .purple:
             cellView.backgroundColor = Color.purpleBG

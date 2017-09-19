@@ -20,6 +20,7 @@ class Color {
     static var brownBG = UIColor("#D7CCC8")
     static var blackBG = UIColor("#9E9E9E")
     static var pinkBG = UIColor("#F8BBD0")
+    static var white = UIColor("#95a5a6")
     
     static func getColorByCategory(category: CategoryColor, isBackground: Bool = true) -> UIColor {
         switch category {
@@ -69,7 +70,7 @@ class Color {
             if isBackground {
                 return UIColor.white
             } else {
-                return UIColor.white
+                return white
             }
         case .yellow:
             if isBackground {

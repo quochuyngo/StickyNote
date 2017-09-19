@@ -1,23 +1,24 @@
 //
-//  NoteListCell.swift
+//  NoteGridCell.swift
 //  StickyNote
 //
-//  Created by Quoc Huy Ngo on 5/27/17.
+//  Created by Quoc Huy Ngo on 6/12/17.
 //  Copyright © 2017 Quoc Huy Ngo. All rights reserved.
 //
 
 import UIKit
 
-class NoteListCell: UICollectionViewCell {
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var boderView: UIView!
+class NoteGridCell: UICollectionViewCell {
+
+    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var createdTimeLabel: UILabel!
+    @IBOutlet weak var boderView: UIView!
+    @IBOutlet weak var cellView: UIView!
     
     var data: Note? {
         didSet {
             titleLabel.text = data?.title
-            createdTimeLabel.text = data?.formatDate()
+            contentLabel.text = data?.content
             if let color = data?.category?.color {
                 setColor(color: color)
             }
@@ -28,6 +29,11 @@ class NoteListCell: UICollectionViewCell {
         // Initialization code
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentLabel.sizeToFit()
+    }
+
     func setColor(color:CategoryColor) {
         switch color {
         case .black:
@@ -56,7 +62,7 @@ class NoteListCell: UICollectionViewCell {
             break
         case .white:
             cellView.backgroundColor = UIColor.white
-            boderView.backgroundColor = UIColor.white
+            boderView.backgroundColor = Color.white
             break
         case .purple:
             cellView.backgroundColor = Color.purpleBG
