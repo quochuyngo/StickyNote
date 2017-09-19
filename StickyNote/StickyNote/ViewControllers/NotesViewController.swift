@@ -73,7 +73,7 @@ class NotesViewController: UIViewController {
     
     func getNotes() {
         let notes = realm.objects(Note.self)
-        dataSource = Array(notes)
+        dataSource = Array(notes).reversed()
     }
     func deleteNote(note: Note) {
         if let index = dataSource.index(where: { item -> Bool in item.id == note.id }) {
