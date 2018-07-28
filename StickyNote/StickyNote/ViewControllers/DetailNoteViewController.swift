@@ -9,12 +9,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PassKit
+import TOPasscodeViewController
 
 protocol DetailNoteViewControllerDelegate {
     func editNote(note: Note, state: NoteState)
     func deleteNote(note:Note)
 }
-class DetailNoteViewController: UIViewController {
+class DetailNoteViewController: BaseViewController {
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var categoryColorButton: UIButton!
@@ -24,11 +26,15 @@ class DetailNoteViewController: UIViewController {
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var timeCreatedLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
+    
+    let settingPassCodeVC = TOPasscodeSettingsViewController(style: .light)
+    
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
-    var note:Note!
+    var note:Note?
     var delegate: DetailNoteViewControllerDelegate?
     var noteState: NoteState!
+    //var passwordContainerView: PasswordContainerView!
     let size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +42,12 @@ class DetailNoteViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(DetailNoteViewController.keyBoardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DetailNoteViewController.keyBoardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         setEditorStates(isEditing: false)
+    
+        /*editTextView.undoManager?.registerUndo(withTarget: self, handler: {
+            _ in
+        })*/
+        
+        //categoryColorButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
         //editTextView.contentSize.height = size.height + 40
     }
     func setViews() {
@@ -54,6 +66,9 @@ class DetailNoteViewController: UIViewController {
             let colorBG =  Color.getColorByCategory(category: (note.category?.color)!)
             editTextView.backgroundColor = colorBG
             timeView.backgroundColor = colorBG
+            editTextView.text = note.content
+            titleTextField.text = note.title
+            timeCreatedLabel.text = note.formatFullDateTime()
         }
         else {
             noteState = .new
@@ -61,72 +76,15 @@ class DetailNoteViewController: UIViewController {
             navigationController?.navigationBar.barTintColor = Color.yellow
             categoryColorButton.backgroundColor = Color.yellow
         }
-        editTextView.text = note.content
-        titleTextField.text = note.title
-        timeCreatedLabel.text = note.formatFullDateTime()
-    }
-    
-    func setData() {
       
-        
     }
-    
+
     func setColor(color: CategoryColor) {
-        switch color {
-        case .black:
-            editTextView.backgroundColor = Color.blackBG
-            timeView.backgroundColor = Color.blackBG
-            navigationController?.navigationBar.barTintColor = UIColor.black
-            categoryColorButton.backgroundColor = UIColor.black
-            break
-        case .blue:
-            editTextView.backgroundColor = Color.blueBG
-            timeView.backgroundColor = Color.blueBG
-            navigationController?.navigationBar.barTintColor = Color.blue
-            categoryColorButton.backgroundColor = Color.blue
-            break
-        case .brown:
-            editTextView.backgroundColor = Color.brownBG
-            timeView.backgroundColor = Color.brownBG
-            navigationController?.navigationBar.barTintColor = UIColor.brown
-            categoryColorButton.backgroundColor = UIColor.brown
-            break
-        case .green:
-            editTextView.backgroundColor = Color.greenBG
-            timeView.backgroundColor = Color.greenBG
-            navigationController?.navigationBar.barTintColor = UIColor.green
-            categoryColorButton.backgroundColor = UIColor.green
-            break
-        case .orange:
-            editTextView.backgroundColor = Color.orangeBG
-            timeView.backgroundColor = Color.orangeBG
-            navigationController?.navigationBar.barTintColor = UIColor.orange
-            categoryColorButton.backgroundColor = UIColor.orange
-            break
-        case .purple:
-            editTextView.backgroundColor = Color.purpleBG
-            timeView.backgroundColor = Color.purpleBG
-            navigationController?.navigationBar.barTintColor = UIColor.purple
-            categoryColorButton.backgroundColor = UIColor.purple
-            break
-        case .red:
-            editTextView.backgroundColor = Color.redBG
-            timeView.backgroundColor = Color.redBG
-            navigationController?.navigationBar.barTintColor = UIColor.red
-            categoryColorButton.backgroundColor = UIColor.red
-            break
-        case .white:
-            editTextView.backgroundColor = UIColor.white
-            timeView.backgroundColor = UIColor.white
-            navigationController?.navigationBar.barTintColor = Color.white
-            categoryColorButton.backgroundColor = UIColor.white
-            break
-        case .yellow:
-            editTextView.backgroundColor = Color.yellowBG
-            timeView.backgroundColor = Color.yellowBG
-            navigationController?.navigationBar.barTintColor = Color.yellow
-            categoryColorButton.backgroundColor = Color.yellow
-        }
+        let color = ColorManager.shared.getColor(with: color)
+        editTextView.backgroundColor = color.bgColor
+        timeView.backgroundColor = color.bgColor
+        navigationController?.navigationBar.barTintColor = color.color
+        categoryColorButton.backgroundColor = color.color
     }
     
     func setEditorStates(isEditing: Bool) {
@@ -166,11 +124,40 @@ class DetailNoteViewController: UIViewController {
         //editTextView.contentSize.height = size.height + 100
     }
     
-    @IBAction func onOptionTap(_ sender: Any) {
+    
+    func getFirstLine(text: String) -> String{
+        return text.components(separatedBy: "\n")[0]
+    }
+    
+    @IBAction func onSelectColorTap(_ sender: UIButton) {
+        let categoryColorView = CategoryColorView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        categoryColorView.delegate = self
+        if let window = UIApplication.shared.keyWindow {
+            window.addSubview(categoryColorView)
+        }
+        //editTextView.undoManager?.undo()
+    }
+    
+    @IBAction func onOptionTap(_ sender: UIButton) {
+        guard let note = note else { return }
         let actionSheet = UIAlertController(title: "Options", message: "", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Lock", style: .default, handler: {
+        actionSheet.addAction(UIAlertAction(title: note.isLocked ? NoteOptions.unlock.rawValue : NoteOptions.lock.rawValue, style: .default, handler: {
             UIAlertAction in
-            self.performSegue(withIdentifier: "PasscodeVC", sender: self)
+            
+            if !note.isLocked {
+                if PassCodeManager.passCode == nil {
+                self.settingPassCodeVC.delegate = self
+                    self.navigationController?.pushViewController(self.settingPassCodeVC, animated: true)
+                    
+                } else {
+                    self.showInputPasscode(in: self, delegate: self)
+                }
+            } else {
+                try! realm.write {
+                    note.isLocked = false
+                }
+            }
+            
         }))
         actionSheet.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
             UIAlertAction in
@@ -191,40 +178,31 @@ class DetailNoteViewController: UIViewController {
         self.present(actionSheet, animated: true)
     }
     
-    func getFirstLine(text: String) -> String{
-        return text.components(separatedBy: "\n")[0]
+    @IBAction func onBackTap(_ sender: UIBarButtonItem) {
+        if let note = note {
+            self.delegate?.editNote(note: note, state: noteState)
+        }
+        _ = navigationController?.popViewController(animated: true)
     }
+
     @IBAction func onDoneTap(_ sender: Any) {
         view.endEditing(true)
-    }
-    
-    @IBAction func onPickColor(_ sender: Any) {
-
-        let categoryColorView = CategoryColorView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        categoryColorView.delegate = self
-        if let window = UIApplication.shared.keyWindow {
-            window.addSubview(categoryColorView)
-        }
-    }
-    
-    @IBAction func onBack(_ sender: Any) {
-        self.delegate?.editNote(note: self.note!, state: noteState)
-       _ = navigationController?.popViewController(animated: true)
     }
 }
 
 extension DetailNoteViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
+        guard let note = note else { return }
         if note.titleEdited {
             try! realm.write {
-                 note?.content = textView.text
+                 note.content = textView.text
             }
         } else {
             titleTextField.text = getFirstLine(text: textView.text)
             try! realm.write {
-                note?.content = textView.text
-                note?.title = titleTextField.text!
+                note.content = textView.text
+                note.title = titleTextField.text!
             }
         }
     }
@@ -232,14 +210,16 @@ extension DetailNoteViewController: UITextViewDelegate {
 
 extension DetailNoteViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let note = note else { return }
         if !(textField.text?.isEmpty)! {
             try! realm.write {
                 note.titleEdited = true
-                note?.title = textField.text!
+                note.title = textField.text!
             }
         }
     }
 }
+
 extension DetailNoteViewController: CategoryColorViewDelegate {
     func onColorButtonTap(category: CategoryColor) {
         try! realm.write {
@@ -249,4 +229,37 @@ extension DetailNoteViewController: CategoryColorViewDelegate {
     }
 }
 
+extension DetailNoteViewController: TOPasscodeViewControllerDelegate {
+    func passcodeViewController(_ passcodeViewController: TOPasscodeViewController, isCorrectCode code: String) -> Bool {
+        guard let note = note else { return false }
+        if code == PassCodeManager.passCode {
+            try! realm.write {
+                note.isLocked = true
+            }
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func didTapCancel(in passcodeViewController: TOPasscodeViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
+
+extension DetailNoteViewController: TOPasscodeSettingsViewControllerDelegate {
+    func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didAttemptCurrentPasscode passcode: String) -> Bool {
+        return true
+    }
+    
+    func passcodeSettingsViewController(_ passcodeSettingsViewController: TOPasscodeSettingsViewController, didChangeToNewPasscode passcode: String, of type: TOPasscodeType) {
+        guard let note = note else { return }
+        PassCodeManager.passCode = passcode
+        try! realm.write {
+            note.isLocked = true
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
+}

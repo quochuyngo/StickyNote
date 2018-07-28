@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import TOPasscodeViewController
 
 let realm = try! Realm()
 
@@ -15,11 +16,20 @@ class NotesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var displayTypeButton: UIButton!
     @IBOutlet weak var addNoteButton: UIButton!
+    
+    let ratio:CGFloat = 1
     let gridLayout = GridLayout()
     let listLayout = ListLayout()
+    
     var dataSource: [Note] = []
     var displayType: DisplayType = .list
+    var currentSelectedNote: Note?
     
+    @IBOutlet weak var heightAddButtonConstraint: NSLayoutConstraint! {
+        didSet {
+            heightAddButtonConstraint.constant = 42*ratio
+        }
+    }
     override func viewDidLoad() {
         //print(Realm.Configuration.defaultConfiguration.fileURL!)
         super.viewDidLoad()
@@ -30,7 +40,7 @@ class NotesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = Color.yellow
+        navigationController?.navigationBar.barTintColor = Color.barTint
         if dataSource.isEmpty {
             collectionView.isHidden = true
         } else {
@@ -103,6 +113,7 @@ class NotesViewController: UIViewController {
     }
     
     @IBAction func onAddNote(_ sender: Any) {
+        currentSelectedNote = nil
         performSegue(withIdentifier: "toDetailNoteVCSegue", sender: self)
     }
     
@@ -110,25 +121,7 @@ class NotesViewController: UIViewController {
         if segue.identifier == "toDetailNoteVCSegue" {
             let vc = segue.destination as! DetailNoteViewController
             vc.delegate = self
-            switch sender {
-            case is NoteGridCell:
-                if let slectedIndex = collectionView.indexPath(for: (sender as? NoteGridCell)!) {
-                    vc.note = dataSource[slectedIndex.row]
-                }
-                break
-            case is NoteCell:
-                if let selectIndex = collectionView.indexPath(for: (sender as? NoteCell)!){
-                    vc.note = dataSource[selectIndex.row]
-                }
-                break
-            case is NoteListCell:
-                if let selectIndex = collectionView.indexPath(for: (sender as? NoteListCell)!){
-                    vc.note = dataSource[selectIndex.row]
-                }
-                break
-            default:
-                break
-            }
+            vc.note = currentSelectedNote
         }
     }
     
@@ -154,16 +147,28 @@ extension NotesViewController: UICollectionViewDelegate, UICollectionViewDataSou
             cell.data = dataSource[indexPath.row]
             return cell
         case .list:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteListCell", for: indexPath) as! NoteListCell
             cell.data = dataSource[indexPath.row]
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            performSegue(withIdentifier: "toDetailNoteVCSegue", sender: cell)
-        }
+            //check note isLocked
+            let note = dataSource[indexPath.row]
+            currentSelectedNote = note
+            if note.isLocked {
+                //show passcode view
+                handleShowPasscodeVC()
+            } else {
+                performSegue(withIdentifier: "toDetailNoteVCSegue", sender: note)
+            }
+    }
+
+    func handleShowPasscodeVC() {
+        let passcodeVC = TOPasscodeViewController(style: .opaqueLight, passcodeType: .fourDigits)
+        passcodeVC.delegate = self
+        present(passcodeVC, animated: true, completion: nil)
     }
 }
 
@@ -181,5 +186,20 @@ extension NotesViewController: DetailNoteViewControllerDelegate {
     
     func deleteNotr(note: Note) {
        deleteNote(note: note)
+    }
+}
+
+extension NotesViewController: TOPasscodeViewControllerDelegate {
+    func passcodeViewController(_ passcodeViewController: TOPasscodeViewController, isCorrectCode code: String) -> Bool {
+        if code == PassCodeManager.passCode {
+            performSegue(withIdentifier: "toDetailNoteVCSegue", sender: currentSelectedNote)
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func didTapCancel(in passcodeViewController: TOPasscodeViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }

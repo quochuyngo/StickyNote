@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,6 +44,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="83O-lO-dCe">
+                                <rect key="frame" x="43" y="47.5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="GfH-Y0-6tJ"/>
+                                    <constraint firstAttribute="width" secondItem="83O-lO-dCe" secondAttribute="height" multiplier="1:1" id="pIG-Lh-Wdc"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.56470588235294117" green="0.792156862745098" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -53,8 +62,10 @@
                             <constraint firstItem="K6W-L9-g72" firstAttribute="leading" secondItem="qAo-dE-il1" secondAttribute="leading" constant="4" id="Wj4-ov-Mcg"/>
                             <constraint firstItem="wTz-65-sUY" firstAttribute="top" secondItem="DLR-QW-34Y" secondAttribute="bottom" constant="2" id="XHj-24-OOq"/>
                             <constraint firstItem="DLR-QW-34Y" firstAttribute="top" secondItem="qAo-dE-il1" secondAttribute="top" id="cvj-Uv-qSF"/>
+                            <constraint firstItem="83O-lO-dCe" firstAttribute="centerY" secondItem="qAo-dE-il1" secondAttribute="centerY" id="fTK-PN-NEg"/>
                             <constraint firstAttribute="trailing" secondItem="DLR-QW-34Y" secondAttribute="trailing" id="kqT-dE-D2Y"/>
                             <constraint firstItem="wTz-65-sUY" firstAttribute="leading" secondItem="qAo-dE-il1" secondAttribute="leading" constant="4" id="tKr-BD-eor"/>
+                            <constraint firstItem="83O-lO-dCe" firstAttribute="centerX" secondItem="qAo-dE-il1" secondAttribute="centerX" id="u2p-XJ-szQ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -70,9 +81,13 @@
                 <outlet property="boderView" destination="DLR-QW-34Y" id="USY-mv-qDe"/>
                 <outlet property="cellView" destination="qAo-dE-il1" id="OGX-P9-FB2"/>
                 <outlet property="contentLabel" destination="K6W-L9-g72" id="hhc-Ir-5Ls"/>
+                <outlet property="lockImageView" destination="83O-lO-dCe" id="KnH-xW-A91"/>
                 <outlet property="titleLabel" destination="wTz-65-sUY" id="wto-m4-j9D"/>
             </connections>
             <point key="canvasLocation" x="65" y="111.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_lock" width="32" height="32"/>
+    </resources>
 </document>

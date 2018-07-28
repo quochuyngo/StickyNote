@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		075BC3C7DF649A1C89494F9E /* Pods_StickyNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */; };
-		5A0D8F8F1EECEC12002BB55B /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D8F8E1EECEC12002BB55B /* PasscodeViewController.swift */; };
 		5A250CD81EEBB22A00B2914F /* TextEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */; };
+		5A25AEF720B706FF008D613B /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25AEF620B706FF008D613B /* ColorManager.swift */; };
 		5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */; };
 		5A4A43C51ED87F7F001BAA32 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */; };
 		5A4A43C71ED8889B001BAA32 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A43C61ED8889B001BAA32 /* Color.swift */; };
 		5A514BDE1EDABB9B008D60F6 /* CategoryColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A514BDD1EDABB9B008D60F6 /* CategoryColorView.xib */; };
 		5A514BE21EDABCB2008D60F6 /* CategoryColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A514BE11EDABCB2008D60F6 /* CategoryColorView.swift */; };
 		5A514BE61EDB3196008D60F6 /* ColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A514BE51EDB3196008D60F6 /* ColorView.xib */; };
+		5A633672210B0BA500743E00 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A633671210B0BA500743E00 /* StoreKit.framework */; };
 		5A9E1B4C1ED81E4F007D41C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1B4B1ED81E4F007D41C7 /* AppDelegate.swift */; };
 		5A9E1B511ED81E4F007D41C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1B4F1ED81E4F007D41C7 /* Main.storyboard */; };
 		5A9E1B531ED81E4F007D41C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1B521ED81E4F007D41C7 /* Assets.xcassets */; };
@@ -37,19 +38,23 @@
 		5AD3296D1EEE53AD00137A2C /* NoteGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD3296B1EEE53AD00137A2C /* NoteGridCell.xib */; };
 		5AD5FBDF1EEEFE8500BA9C14 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5FBDE1EEEFE8500BA9C14 /* GridLayout.swift */; };
 		5AD5FBE11EEF088C00BA9C14 /* ListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5FBE01EEF088C00BA9C14 /* ListLayout.swift */; };
+		5AF1E16920CB940D003FCB90 /* PassCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF1E16820CB940D003FCB90 /* PassCodeManager.swift */; };
+		5AF4E80E20CD1A040051A24E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4E80D20CD1A040051A24E /* BaseViewController.swift */; };
+		5AF4E81020CD31D70051A24E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF4E80F20CD31D70051A24E /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickyNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote.debug.xcconfig"; sourceTree = "<group>"; };
-		5A0D8F8E1EECEC12002BB55B /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		5A250CD71EEBB22A00B2914F /* TextEditorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditorCell.swift; sourceTree = "<group>"; };
+		5A25AEF620B706FF008D613B /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		5A4A43BF1ED861DE001BAA32 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		5A4A43C41ED87F7F001BAA32 /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		5A4A43C61ED8889B001BAA32 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5A514BDD1EDABB9B008D60F6 /* CategoryColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryColorView.xib; sourceTree = "<group>"; };
 		5A514BE11EDABCB2008D60F6 /* CategoryColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryColorView.swift; sourceTree = "<group>"; };
 		5A514BE51EDB3196008D60F6 /* ColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorView.xib; sourceTree = "<group>"; };
+		5A633671210B0BA500743E00 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5A9E1B481ED81E4F007D41C7 /* StickyNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9E1B4B1ED81E4F007D41C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A9E1B501ED81E4F007D41C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +78,9 @@
 		5AD3296B1EEE53AD00137A2C /* NoteGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteGridCell.xib; sourceTree = "<group>"; };
 		5AD5FBDE1EEEFE8500BA9C14 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		5AD5FBE01EEF088C00BA9C14 /* ListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListLayout.swift; sourceTree = "<group>"; };
+		5AF1E16820CB940D003FCB90 /* PassCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeManager.swift; sourceTree = "<group>"; };
+		5AF4E80D20CD1A040051A24E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5AF4E80F20CD31D70051A24E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075BC3C7DF649A1C89494F9E /* Pods_StickyNote.framework in Frameworks */,
+				5A633672210B0BA500743E00 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +100,7 @@
 		14D458E647A2BBA70B52CF1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A633671210B0BA500743E00 /* StoreKit.framework */,
 				07F6FF3FADF5F1A7892362D3 /* Pods_StickyNote.framework */,
 			);
 			name = Frameworks;
@@ -103,6 +113,15 @@
 				A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5A25AEF520B706EB008D613B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5A25AEF620B706FF008D613B /* ColorManager.swift */,
+				5AF1E16820CB940D003FCB90 /* PassCodeManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5A9E1B3F1ED81E4F007D41C7 = {
@@ -126,6 +145,7 @@
 		5A9E1B4A1ED81E4F007D41C7 /* StickyNote */ = {
 			isa = PBXGroup;
 			children = (
+				5A25AEF520B706EB008D613B /* Managers */,
 				5A9E1B621ED821B2007D41C7 /* Extensions */,
 				5A9E1B5F1ED81FF4007D41C7 /* Models */,
 				5A9E1B5D1ED81FD8007D41C7 /* ViewControllers */,
@@ -144,7 +164,8 @@
 			children = (
 				5A9E1B601ED8207F007D41C7 /* DetailNoteViewController.swift */,
 				5A9E1B651ED82417007D41C7 /* NotesViewController.swift */,
-				5A0D8F8E1EECEC12002BB55B /* PasscodeViewController.swift */,
+				5AF4E80D20CD1A040051A24E /* BaseViewController.swift */,
+				5AF4E80F20CD31D70051A24E /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -204,7 +225,6 @@
 				5A9E1B451ED81E4F007D41C7 /* Frameworks */,
 				5A9E1B461ED81E4F007D41C7 /* Resources */,
 				39FD95E6AEAB49BB8E111222 /* [CP] Embed Pods Frameworks */,
-				D2B35645097D5B018343D510 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,8 +247,13 @@
 				TargetAttributes = {
 					5A9E1B471ED81E4F007D41C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZNAQHPTR3U;
+						DevelopmentTeam = 589Z4L567V;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -278,19 +303,31 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/QuickTableViewController/QuickTableViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SmileLock/SmileLock.framework",
+				"${BUILT_PRODUCTS_DIR}/TOPasscodeViewController/TOPasscodeViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/VENTouchLock/VENTouchLock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickTableViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmileLock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOPasscodeViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VENTouchLock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -315,21 +352,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D2B35645097D5B018343D510 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StickyNote/Pods-StickyNote-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -338,16 +360,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A9E1B661ED82417007D41C7 /* NotesViewController.swift in Sources */,
+				5AF4E81020CD31D70051A24E /* SettingViewController.swift in Sources */,
 				5AD3296C1EEE53AD00137A2C /* NoteGridCell.swift in Sources */,
 				5AB63F3E1ED9754D001213E2 /* NoteListCell.swift in Sources */,
+				5AF1E16920CB940D003FCB90 /* PassCodeManager.swift in Sources */,
 				5A9E1B681ED83D91007D41C7 /* CustomTextView.swift in Sources */,
+				5AF4E80E20CD1A040051A24E /* BaseViewController.swift in Sources */,
 				5A9E1B4C1ED81E4F007D41C7 /* AppDelegate.swift in Sources */,
 				5A4A43C71ED8889B001BAA32 /* Color.swift in Sources */,
 				5AD5FBE11EEF088C00BA9C14 /* ListLayout.swift in Sources */,
 				5AA531761EDC0F32001EED85 /* ItemOptionCell.swift in Sources */,
 				5A4A43C11ED861DE001BAA32 /* NoteCell.swift in Sources */,
 				5AA531791EDC1104001EED85 /* OptionView.swift in Sources */,
-				5A0D8F8F1EECEC12002BB55B /* PasscodeViewController.swift in Sources */,
+				5A25AEF720B706FF008D613B /* ColorManager.swift in Sources */,
 				5AB63F3B1ED92866001213E2 /* Note.swift in Sources */,
 				5A9E1B641ED821CC007D41C7 /* ViewExtension.swift in Sources */,
 				5A9E1B611ED8207F007D41C7 /* DetailNoteViewController.swift in Sources */,
@@ -479,12 +504,15 @@
 			baseConfigurationReference = 54390F618066BA3844B734B8 /* Pods-StickyNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZNAQHPTR3U;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 589Z4L567V;
 				INFOPLIST_FILE = StickyNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.NoteApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyngo.FastNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -494,12 +522,15 @@
 			baseConfigurationReference = A4C46FFC9EAC741ACD5BE1CB /* Pods-StickyNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZNAQHPTR3U;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 589Z4L567V;
 				INFOPLIST_FILE = StickyNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.quochuyngo.NoteApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyngo.FastNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

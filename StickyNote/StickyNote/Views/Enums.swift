@@ -13,8 +13,9 @@ enum DisplayType {
 }
 
 enum NoteOptions: String {
-    case lock
-    case delete
+    case lock = "Lock"
+    case delete = "Delete"
+    case unlock = "Unlock"
 }
 
 enum NoteState: String {

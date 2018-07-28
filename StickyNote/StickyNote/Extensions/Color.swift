@@ -21,6 +21,7 @@ class Color {
     static var blackBG = UIColor("#9E9E9E")
     static var pinkBG = UIColor("#F8BBD0")
     static var white = UIColor("#95a5a6")
+    static var barTint = UIColor("#FFEB3B")//UIColor("#e2e2e2")
     
     static func getColorByCategory(category: CategoryColor, isBackground: Bool = true) -> UIColor {
         switch category {

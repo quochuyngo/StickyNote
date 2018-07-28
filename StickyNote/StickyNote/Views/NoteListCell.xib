@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="45.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZD2-Na-uO3">
@@ -42,15 +44,24 @@
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-WN-mV9">
+                                <rect key="frame" x="230" y="11.5" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MgQ-WN-mV9" secondAttribute="height" multiplier="1:1" id="D6E-DR-35w"/>
+                                    <constraint firstAttribute="height" constant="18" id="Hi9-Ye-ySD"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dKJ-yu-Apg" firstAttribute="top" secondItem="ZD2-Na-uO3" secondAttribute="top" id="3xW-AN-eGy"/>
                             <constraint firstAttribute="bottom" secondItem="dKJ-yu-Apg" secondAttribute="bottom" id="5wA-An-0e0"/>
                             <constraint firstItem="Oqq-fA-SEN" firstAttribute="top" secondItem="ZD2-Na-uO3" secondAttribute="top" id="CKJ-5L-e6x"/>
+                            <constraint firstItem="MgQ-WN-mV9" firstAttribute="centerY" secondItem="ZD2-Na-uO3" secondAttribute="centerY" id="DWu-Mr-kWs"/>
                             <constraint firstItem="Oqq-fA-SEN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VBt-1t-jKv" secondAttribute="trailing" constant="20" id="E57-ki-ejW"/>
                             <constraint firstItem="VBt-1t-jKv" firstAttribute="leading" secondItem="dKJ-yu-Apg" secondAttribute="trailing" constant="4" id="OY6-cq-ODb"/>
                             <constraint firstAttribute="bottom" secondItem="Oqq-fA-SEN" secondAttribute="bottom" id="Y5E-xT-2Tv"/>
+                            <constraint firstItem="Oqq-fA-SEN" firstAttribute="leading" secondItem="MgQ-WN-mV9" secondAttribute="trailing" constant="8" id="dbh-qA-O7q"/>
                             <constraint firstItem="VBt-1t-jKv" firstAttribute="centerY" secondItem="ZD2-Na-uO3" secondAttribute="centerY" id="qPB-QE-GsJ"/>
                             <constraint firstAttribute="trailing" secondItem="Oqq-fA-SEN" secondAttribute="trailing" constant="4" id="ssP-sh-HWp"/>
                             <constraint firstItem="dKJ-yu-Apg" firstAttribute="leading" secondItem="ZD2-Na-uO3" secondAttribute="leading" id="wYi-A7-ikr"/>
@@ -69,9 +80,13 @@
                 <outlet property="boderView" destination="dKJ-yu-Apg" id="eJV-gQ-UBc"/>
                 <outlet property="cellView" destination="ZD2-Na-uO3" id="6v2-Kl-ru8"/>
                 <outlet property="createdTimeLabel" destination="Oqq-fA-SEN" id="eK1-Ta-Yye"/>
+                <outlet property="lockImageView" destination="MgQ-WN-mV9" id="HUj-MQ-eiQ"/>
                 <outlet property="titleLabel" destination="VBt-1t-jKv" id="EzG-Ks-vYN"/>
             </connections>
             <point key="canvasLocation" x="26" y="51"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_lock" width="32" height="32"/>
+    </resources>
 </document>

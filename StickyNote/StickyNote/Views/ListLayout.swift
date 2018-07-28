@@ -11,7 +11,7 @@ import UIKit
 class ListLayout: UICollectionViewFlowLayout {
     let ratio = UIScreen.main.bounds.width/375
     var height:CGFloat {
-        return 92*ratio
+        return 60//92*ratio
     }
     var width: CGFloat {
         return collectionView!.frame.width

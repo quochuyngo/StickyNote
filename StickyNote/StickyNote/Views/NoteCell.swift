@@ -14,14 +14,21 @@ class NoteCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var lockImageView: UIImageView!
+    
     var data: Note? {
         didSet {
-            if let color = data?.category?.color {
+            guard let note = data else {
+                return
+            }
+            if let color = note.category?.color {
                 setColor(color: color)
             }
-            titleLabel.text = data?.title
-            contentLabel.text = data?.content
-            dateTimeLabel.text = data?.formatDate()
+            titleLabel.text = note.title
+            contentLabel.text = note.content
+            dateTimeLabel.text = note.formatDate()
+            lockImageView.isHidden = !note.isLocked
+            contentLabel.isHidden = note.isLocked
         }
     }
     override func awakeFromNib() {

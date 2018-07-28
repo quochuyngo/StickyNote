@@ -7,7 +7,12 @@ target 'StickyNote' do
 
   # Pods for StickyNote
   pod 'UIColor_Hex_Swift', '~> 3.0.2'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 3.0.0'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SmileLock', '~> 2.0.0'
+  pod 'VENTouchLock'
+  pod 'TOPasscodeViewController'
+  pod 'QuickTableViewController'
+  pod 'FLEX', '~> 2.2.0'
 end
